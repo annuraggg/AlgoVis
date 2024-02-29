@@ -15,6 +15,7 @@ import SelectionSort from "./routes/Sorting/SelectionSort";
 import Structures from "./routes/Structures";
 import Arrays from "./routes/Structures/Arrays";
 import LinkedList from "./routes/Structures/LinkedLists";
+import Stack from "./routes/Structures/Stack";
 
 const Routes = () => {
   return (
@@ -28,6 +29,7 @@ const Routes = () => {
           <Route path="/data-structures" element={<Structures />} />
           <Route path="/data-structures/array" element={<Arrays />} />
           <Route path="/data-structures/linked-list" element={<LinkedList />} />
+          <Route path="/data-structures/stack" element={<Stack />} />
 
           {/* ! SEARCHING ALGORITHMS */}
           <Route path="/searching/linear" element={<LinearSearch />} />
