@@ -19,6 +19,7 @@ import Stack from "./routes/Structures/Stack";
 import Queue from "./routes/Structures/Queue";
 import HashTableComponent from "./routes/Structures/HashTable";
 import Pathfinding from "./routes/Pathfinding";
+import Dijkstras from "./routes/Pathfinding/Djikstras/Dijkstras";
 
 const Routes = () => {
   return (
@@ -57,7 +58,8 @@ const Routes = () => {
           <Route path="/sorting/heap" element={<HeapSort />} />
 
           {/* ! PATHFINDING ALGORITHMS */}
-          {<Route path="/pathfinding" element={<Pathfinding />} />}
+          <Route path="/pathfinding" element={<Pathfinding />} />
+          <Route path="/pathfinding/dijkstras" element={<Dijkstras />} />
         </RouterRoutes>
       </BrowserRouter>
     </>

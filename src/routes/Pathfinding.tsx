@@ -22,7 +22,7 @@ function Pathfinding() {
       name: "Dijkstra's Algorithm",
       description:
         "Dijkstra's Algorithm is a pathfinding algorithm that finds the shortest path between two nodes.",
-      path: "/pathfinding/dijkstra",
+      path: "/pathfinding/dijkstras",
     },/*
     {
       name: "A* Search Algorithm",
