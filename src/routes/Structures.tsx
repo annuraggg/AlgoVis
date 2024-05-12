@@ -36,7 +36,7 @@ function Sort() {
       name: "Queue",
       description: "A collection of elements with FIFO access",
       path: "/data-structures/queue",
-    },
+    },/*
     {
       name: "Hash Table",
       description: "A collection of elements with key-value access",
@@ -61,7 +61,7 @@ function Sort() {
       name: "Graph",
       description: "A collection of elements with a hierarchical structure",
       path: "/data-structures/graph",
-    },
+    },*/
   ];
 
   return (

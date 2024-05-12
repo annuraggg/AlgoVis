@@ -45,7 +45,7 @@ function Sort() {
       description:
         "QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.",
       path: "/sorting/quick",
-    },
+    },/*
     {
       name: "Heap Sort",
       description:
@@ -123,7 +123,7 @@ function Sort() {
       description:
         "3 Way Merge Sort is a variation of Merge Sort Algorithm. In 3 Way Merge Sort, an array is divided into 3 parts and the merge function is used for merging these three parts.",
       path: "/sorting/3-way-merge",
-    },
+    },*/
   ];
 
   return (

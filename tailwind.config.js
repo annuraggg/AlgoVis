@@ -62,6 +62,23 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        neue: ["neue-montreal", "sans-serif"],
+        geist: ["geist", "sans-serif"],
+        poly: ["Polysans", "sans-serif"],
+      },
+
+      dropShadow: {
+        glow: [
+          "0 0px 10px rgba(255,255, 255, 0.35)",
+          "0 0px 65px rgba(255, 255,255, 0.2)",
+        ],
+        glowLight: [
+          "0 0px 1px rgba(255,255, 255, 0.35)",
+          "0 0px 10px rgba(255, 255,255, 0.2)",
+        ],
+      },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -16,6 +16,9 @@ import Structures from "./routes/Structures";
 import Arrays from "./routes/Structures/Arrays";
 import LinkedList from "./routes/Structures/LinkedLists";
 import Stack from "./routes/Structures/Stack";
+import Queue from "./routes/Structures/Queue";
+import HashTableComponent from "./routes/Structures/HashTable";
+import Pathfinding from "./routes/Pathfinding";
 
 const Routes = () => {
   return (
@@ -30,11 +33,19 @@ const Routes = () => {
           <Route path="/data-structures/array" element={<Arrays />} />
           <Route path="/data-structures/linked-list" element={<LinkedList />} />
           <Route path="/data-structures/stack" element={<Stack />} />
+          <Route path="/data-structures/queue" element={<Queue />} />
+          <Route
+            path="/data-structures/hash-table"
+            element={<HashTableComponent />}
+          />
 
           {/* ! SEARCHING ALGORITHMS */}
           <Route path="/searching/linear" element={<LinearSearch />} />
           <Route path="/searching/binary" element={<BinarySearch />} />
-          <Route path="/searching/sentinelLinear" element={<SentinalLinearSearch />} />
+          <Route
+            path="/searching/sentinelLinear"
+            element={<SentinalLinearSearch />}
+          />
 
           {/* ! SORTING ALGORITHMS */}
           <Route path="/sorting" element={<Sort />} />
@@ -45,6 +56,8 @@ const Routes = () => {
           <Route path="/sorting/quick" element={<QuickSort />} />
           <Route path="/sorting/heap" element={<HeapSort />} />
 
+          {/* ! PATHFINDING ALGORITHMS */}
+          {<Route path="/pathfinding" element={<Pathfinding />} />}
         </RouterRoutes>
       </BrowserRouter>
     </>
