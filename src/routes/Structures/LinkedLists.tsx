@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -57,7 +57,6 @@ class LinkedList {
     } else {
       let currentNode = this.head;
       while (currentNode?.value !== after && currentNode?.next) {
-        // @ts-ignore
         currentNode = currentNode?.next;
       }
       if (!currentNode?.next) {
@@ -99,7 +98,6 @@ class LinkedList {
     } else {
       let currentNode = this.head;
       while (currentNode?.next?.value !== value && currentNode?.next) {
-        // @ts-ignore
         currentNode = currentNode?.next;
       }
       if (!currentNode?.next) {
@@ -133,7 +131,7 @@ class LinkedList {
     let counter = 0;
     let currentNode = this.head;
     while (counter < index) {
-      // @ts-ignore
+      if (!currentNode) return null;
       currentNode = currentNode?.next;
       counter++;
     }
@@ -142,7 +140,7 @@ class LinkedList {
 
   map() {
     let currentNode = this.head;
-    let list = [];
+    const list = [];
     while (currentNode) {
       list.push(currentNode.value);
       currentNode = currentNode.next;
