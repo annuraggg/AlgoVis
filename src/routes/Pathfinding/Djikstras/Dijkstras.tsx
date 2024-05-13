@@ -99,14 +99,13 @@ const Dijkstras = () => {
   };
 
   const animatePath = async (path: Node[]) => {
-    for (const node of path) {
-      setShortestPath((prevPath) => [
-        ...prevPath,
-        { row: node.row, col: node.col },
-      ]);
-      await delay(50);
+    for (let i = path.length - 1; i > 0; i--) {
+      const node = path[i];
+      setShortestPath((prev) => [...prev, { row: node.row, col: node.col }]);
+      await delay();
     }
 
+    
     setVisualizationActive(false);
   };
 
