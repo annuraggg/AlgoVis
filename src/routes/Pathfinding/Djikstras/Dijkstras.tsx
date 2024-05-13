@@ -99,13 +99,14 @@ const Dijkstras = () => {
   };
 
   const animatePath = async (path: Node[]) => {
-    for (let i = path.length - 1; i > 0; i--) {
-      const node = path[i];
-      setShortestPath((prev) => [...prev, { row: node.row, col: node.col }]);
+    for (const node of path) {
+      setShortestPath((prevPath) => [
+        ...prevPath,
+        { row: node.row, col: node.col },
+      ]);
       await delay();
     }
 
-    
     setVisualizationActive(false);
   };
 
@@ -119,13 +120,13 @@ const Dijkstras = () => {
     return neighbors;
   };
 
-  const getWall = () => {
+/*const getWall = () => {
     document.write(JSON.stringify(walls));
-  };
+  };*/
 
   return (
     <div className="flex items-center justify-center">
-      <button onClick={getWall}>get wall</button>
+      {/*      <button onClick={getWall}>get wall</button>*/}
       <Board
         visualizationActive={visualizationActive}
         rows={rows}
