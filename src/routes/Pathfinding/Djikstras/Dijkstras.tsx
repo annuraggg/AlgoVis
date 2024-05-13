@@ -28,10 +28,12 @@ const Dijkstras = () => {
   });
   const [visualizationActive, setVisualizationActive] = useState(false);
 
+  const [delayFactor, setDelayFactor] = useState(1);
+  const delay = () => new Promise((res) => setTimeout(res, delayFactor));
+
   const rows = 15;
   const cols = 50;
 
-  const delay = (ms: number = 1) => new Promise((res) => setTimeout(res, ms));
 
   const dijkstra = async () => {
     setVisualizationActive(true);
@@ -142,6 +144,8 @@ const Dijkstras = () => {
         setEndNode={setEndNode}
         setWalls={setWalls}
         algorithm={dijkstra}
+        delayFactor={delayFactor}
+        setDelayFactor={setDelayFactor}
       />
     </div>
   );

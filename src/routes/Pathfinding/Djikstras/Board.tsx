@@ -19,6 +19,8 @@ const Board = ({
   setWalls,
   algorithm,
   visualizationActive,
+  delayFactor,
+  setDelayFactor,
 }: {
   rows: number;
   cols: number;
@@ -44,6 +46,8 @@ const Board = ({
   >;
   algorithm: () => void;
   visualizationActive: boolean;
+  delayFactor: number;
+  setDelayFactor: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const [currentAction, setCurrentAction] = useState("");
   const [actionActive, setActionActive] = useState(false);
@@ -55,6 +59,9 @@ const Board = ({
     if (visualizationActive) {
       setCurrentAction("visualize");
       setActionActive(true);
+    } else {
+      setCurrentAction("");
+      setActionActive(false);
     }
   }, [visualizationActive]);
 
@@ -79,8 +86,10 @@ const Board = ({
 
   useEffect(() => {
     if (currentAction === "clear") {
-      setStartNode({ row: 4, col: 5 });
-      setEndNode({ row: 4, col: 20 });
+      setStartNode({ row: 6, col: 5 });
+      setEndNode({ row: 6, col: 40 });
+      setVisitedNodes([]);
+      setShortestPath([]);
       setWalls([]);
       return;
     }
@@ -131,6 +140,8 @@ const Board = ({
         setCurrentAction={setCurrentAction}
         actionActive={actionActive}
         setWall={setPreDefinedWall}
+        delayFactor={delayFactor}
+        setDelayFactor={setDelayFactor}
       />
 
       <div className="flex flex-col mt-10">

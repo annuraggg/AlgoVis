@@ -7,21 +7,26 @@ import {
 } from "@/components/ui/select";
 import preDefinedWalls from "../preDefinedWalls";
 import { SelectValue } from "@radix-ui/react-select";
+import { Input } from "@/components/ui/input";
 
 const Actions = ({
   currentAction,
   setCurrentAction,
   actionActive,
   setWall,
+  delayFactor,
+  setDelayFactor,
 }: {
   currentAction: string;
   setCurrentAction: (action: string) => void;
   actionActive: boolean;
   setWall: (name: string) => void;
+  delayFactor: number;
+  setDelayFactor: (value: number) => void;
 }) => {
   return (
     <div>
-      <div className="flex gap-5">
+      <div className="flex gap-5 items-center">
         <Button
           disabled={actionActive}
           onClick={() => setCurrentAction("startNode")}
@@ -46,6 +51,17 @@ const Actions = ({
         >
           Remove Wall
         </Button>
+
+        <p>Delay (In ms)</p>
+        <Input
+          type="number"
+          value={delayFactor}
+          onChange={(e) => setDelayFactor(Number(e.target.value))}
+          disabled={actionActive}
+          placeholder="Delay (In ms)"
+          className="w-[100px]"
+        />
+
         <Button
           disabled={actionActive}
           onClick={() => setCurrentAction("clear")}
