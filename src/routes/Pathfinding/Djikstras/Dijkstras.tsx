@@ -28,12 +28,12 @@ const Dijkstras = () => {
   });
   const [visualizationActive, setVisualizationActive] = useState(false);
 
-  const [delayFactor, setDelayFactor] = useState(1);
-  const delay = () => new Promise((res) => setTimeout(res, delayFactor));
+  const [delayFactor, setDelayFactor] = useState("1");
+  const delay = () =>
+    new Promise((res) => setTimeout(res, parseInt(delayFactor)));
 
   const rows = 15;
   const cols = 50;
-
 
   const dijkstra = async () => {
     setVisualizationActive(true);
@@ -122,7 +122,7 @@ const Dijkstras = () => {
     return neighbors;
   };
 
-/*const getWall = () => {
+  /*const getWall = () => {
     document.write(JSON.stringify(walls));
   };*/
 

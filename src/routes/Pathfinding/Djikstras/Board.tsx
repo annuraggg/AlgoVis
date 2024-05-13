@@ -46,8 +46,8 @@ const Board = ({
   >;
   algorithm: () => void;
   visualizationActive: boolean;
-  delayFactor: number;
-  setDelayFactor: React.Dispatch<React.SetStateAction<number>>;
+  delayFactor: string;
+  setDelayFactor: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const [currentAction, setCurrentAction] = useState("");
   const [actionActive, setActionActive] = useState(false);

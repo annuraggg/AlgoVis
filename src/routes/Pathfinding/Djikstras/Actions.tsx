@@ -21,8 +21,8 @@ const Actions = ({
   setCurrentAction: (action: string) => void;
   actionActive: boolean;
   setWall: (name: string) => void;
-  delayFactor: number;
-  setDelayFactor: (value: number) => void;
+  delayFactor: string;
+  setDelayFactor: (value: string) => void;
 }) => {
   return (
     <div>
@@ -56,7 +56,7 @@ const Actions = ({
         <Input
           type="number"
           value={delayFactor}
-          onChange={(e) => setDelayFactor(Number(e.target.value))}
+          onChange={(e) => setDelayFactor(e.target.value)}
           disabled={actionActive}
           placeholder="Delay (In ms)"
           className="w-[100px]"
