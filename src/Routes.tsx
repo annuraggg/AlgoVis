@@ -4,6 +4,7 @@ import Search from "./routes/Search";
 import BinarySearch from "./routes/Searching/BinarySearch";
 import LinearSearch from "./routes/Searching/LinearSearch";
 import SentinalLinearSearch from "./routes/Searching/SentinalLinearSearch";
+
 import Sort from "./routes/Sort";
 import BubbleSort from "./routes/Sorting/BubbleSort";
 import HeapSort from "./routes/Sorting/HeapSort";
@@ -11,6 +12,9 @@ import InsertionSort from "./routes/Sorting/InsertionSort";
 import MergeSort from "./routes/Sorting/MergeSort";
 import QuickSort from "./routes/Sorting/QuickSort";
 import SelectionSort from "./routes/Sorting/SelectionSort";
+import BucketSort from "./routes/Sorting/BucketSort";
+import RadixSort from "./routes/Sorting/RadixSort";
+import CountingSort from "./routes/Sorting/CountingSort";
 
 import Structures from "./routes/Structures";
 import Arrays from "./routes/Structures/Arrays";
@@ -56,6 +60,9 @@ const Routes = () => {
           <Route path="/sorting/merge" element={<MergeSort />} />
           <Route path="/sorting/quick" element={<QuickSort />} />
           <Route path="/sorting/heap" element={<HeapSort />} />
+          <Route path="/sorting/bucket" element={<BucketSort />} />
+          <Route path="/sorting/radix" element={<RadixSort />} />
+          <Route path="/sorting/counting" element={<CountingSort />} />
 
           {/* ! PATHFINDING ALGORITHMS */}
           <Route path="/pathfinding" element={<Pathfinding />} />

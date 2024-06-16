@@ -25,7 +25,8 @@ function Sort() {
     },
     {
       name: "Bubble Sort",
-      description: "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
+      description:
+        "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
       path: "/sorting/bubble",
     },
     {
@@ -45,13 +46,13 @@ function Sort() {
       description:
         "QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.",
       path: "/sorting/quick",
-    },/*
+    },
     {
       name: "Heap Sort",
       description:
         "Heap Sort is a popular and efficient sorting algorithm in computer programming. It is a comparison-based sorting technique and is based on Binary Heap data structure.",
       path: "/sorting/heap",
-    },
+    },/*
     {
       name: "Radix Sort",
       description:
@@ -64,6 +65,8 @@ function Sort() {
         "Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.",
       path: "/sorting/bucket",
     },
+    /*
+
     {
       name: "Tim Sort",
       description:

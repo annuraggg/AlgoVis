@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -135,6 +136,123 @@ const QuickSort = () => {
             </Tooltip>
           </TooltipProvider>
         ))}
+      </div>
+
+      <div className="flex justify-between mt-10 w-full">
+        <div className="w-[58%]">
+          <h1 className="text-xl mb-4">Pseudocode</h1>
+          <div className="daisy-mockup-code">
+            <pre>
+              {" "}
+              <code>
+                <span>function</span> <span>quickSort</span>(<span>arr</span>, <span>low</span>, <span>high</span>) {"{"}
+                {"\n"} <span>if</span> (low {"<"} high) {"{"} {"\n"}
+                {"\t"} <span>let</span> pivotIndex = partition(arr, low, high);{"\n"}
+                {"\t"} quickSort(arr, low, pivotIndex - 1);{"\n"}
+                {"\t"} quickSort(arr, pivotIndex + 1, high);{"\n"}
+                {"}"} {"\n"}
+                {"}"} {"\n"}
+                {"\n"} <span>function</span> <span>partition</span>(<span>arr</span>, <span>low</span>, <span>high</span>) {"{"} {"\n"}
+                {"\t"} <span>let</span> pivot = arr[high];{"\n"}
+                {"\t"} <span>let</span> i = low;{"\n"}
+                {"\n"} {"\t"} <span>for</span> (<span>let</span> j = low; j {"<"} high; j++) {"{"} {"\n"}
+                {"\t\t"} <span>if</span> (arr[j] {"<"} pivot) {"{"} {"\n"}
+                {"\t\t\t"} [arr[i], arr[j]] = [arr[j], arr[i]];{"\n"}
+                {"\t\t\t"} i++;{"\n"}
+                {"\t\t"} {"}"} {"\n"}
+                {"\t"} {"}"} {"\n"}
+                {"\t"} [arr[i], arr[high]] = [arr[high], arr[i]];{"\n"}
+                {"\t"} <span>return</span> i;{"\n"}
+                {"}"}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div className="w-[40%]">
+          <Card>
+            <CardHeader>
+              <CardTitle>Complexity Variables</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <b>Time Complexity</b>
+              </p>
+              <p>
+                Best Case: O(n log n)
+              </p>
+              <p>
+                Worst Case: O(n^2)
+              </p>
+              <p>
+                Average: O(n log n)
+              </p>
+              <Separator className="my-5" />
+              <p>
+                <b>Space Complexity</b>
+              </p>
+              <p>O(log n)</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="my-5 w-full border p-5 rounded-lg">
+        <h1 className="text-lg">Algorithm</h1>
+        <ol>
+          <li>
+            <strong>Input:</strong>
+            <ul>
+              <li>
+                A list of elements <code>arr</code> (with <code>n</code>{" "}
+                elements).
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Initialization:</strong>
+            <ul>
+              <li>Choose a pivot element from the list.</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Partition:</strong>
+            <ul>
+              <li>
+                Reorder the list so that elements less than the pivot are on the
+                left, elements greater than the pivot are on the right.
+              </li>
+              <li>Return the pivot index.</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Quick Sort:</strong>
+            <ul>
+              <li>Recursively apply the above steps to the sub-lists.</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Output:</strong>
+            <ul>
+              <li>The sorted list.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div className="my-5">
+        <h1 className="text-lg">Read More: </h1>
+        <a
+          href="https://www.geeksforgeeks.org/quick-sort/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-500"
+        >
+          GeeksForGeeks
+        </a>
       </div>
     </div>
   );

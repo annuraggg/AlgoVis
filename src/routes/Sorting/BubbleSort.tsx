@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const BubbleSort = () => {
   const [barWidth, setBarWidth] = useState<number>(window.innerWidth / 10);
@@ -123,6 +124,122 @@ const BubbleSort = () => {
             </Tooltip>
           </TooltipProvider>
         ))}
+      </div>
+
+      <div className="flex justify-between mt-10 w-full">
+        <div className="w-[58%]">
+          <h1 className="text-xl mb-4">Pseudocode</h1>
+          <div className="daisy-mockup-code">
+            <pre>
+              {" "}
+              <code>
+                <span>function</span> <span>bubbleSort</span>(<span>arr</span>){" "}
+                {"{"}
+                {"\n"} <span>let</span> n = arr.<span>length</span>;{"\n"}{" "}
+                <span>for</span> (<span>let</span> i = 0; i {"<"} n - 1; i++){" "}
+                {"{"}
+                {"\n"} <span>let</span> swapped = <span>false</span>;{"\n"}
+                {"\n"} <span>for</span> (<span>let</span> j = 0; j {"<"} n - 1 -
+                i; j++) {"{"}
+                {"\n"} <span>if</span> (arr[j] {"<"} arr[j + 1]) {"{"}
+                {"\n"} [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];{"\n"}{" "}
+                swapped = <span>true</span>;{"\n"} {"}"}
+                {"\n"} {"}"}
+                {"\n"} <span>if</span> (swapped === <span>false</span>){" "}
+                <span>break</span>;{"\n"} {"}"}
+                {"\n"} <span>return</span> arr;
+                {"\n"} {"}"}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div className="w-[40%]">
+          <Card>
+            <CardHeader>
+              <CardTitle>Complexity Variables</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <b>Time Complexity</b>
+              </p>
+              <p>Best Case: O(n)</p>
+              <p>
+                Worst Case: O(n<sup>2</sup>)
+              </p>
+              <p>
+                Average: O(n<sup>2</sup>)
+              </p>
+              <Separator className="my-5" />
+              <p>
+                <b>Space Complexity</b>
+              </p>
+              <p>O(1)</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="my-5 w-full border p-5 rounded-lg">
+        <h1 className="text-lg">Algorithm</h1>
+        <ol>
+          <li>
+            <strong>Input:</strong>
+            <ul>
+              <li>
+                A list of elements <code>arr</code> (with <code>n</code>{" "}
+                elements).
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Initialization:</strong>
+            <ul>
+              <li>
+                Set <code>swapped</code> to false.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Bubble Sort:</strong>
+            <ul>
+              <li>For each element in the list:</li>
+              <ul>
+                <li>
+                  Set <code>swapped</code> to false.
+                </li>
+                <li>
+                  For each pair of adjacent elements, compare and swap them if
+                  they are out of order.
+                </li>
+                <li>
+                  If no elements were swapped, the list is sorted, and the
+                  algorithm can terminate early.
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Output:</strong>
+            <ul>
+              <li>The sorted list.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div className="my-5">
+        <h1 className="text-lg">Read More: </h1>
+        <a
+          href="https://www.geeksforgeeks.org/bubble-sort/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-500"
+        >
+          GeeksForGeeks
+        </a>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -120,6 +121,7 @@ const MergeSort = () => {
     setCurrentComparison([]);
     setCurrentMerge([]);
   };
+
   return (
     <div className="px-10 flex flex-col items-center justify-center">
       <h1 className="text-2xl mb-5">Merge Sort</h1>
@@ -147,7 +149,7 @@ const MergeSort = () => {
               <TooltipTrigger>
                 <div
                   key={index}
-                  className={`min-w-1 max-w-20  text-black border border-black flex justify-center items-end pb-2 ${
+                  className={`min-w-1 max-w-20 text-black border border-black flex justify-center items-end pb-2 ${
                     currentComparison.includes(index)
                       ? "bg-blue-500"
                       : currentMerge.includes(index)
@@ -163,6 +165,139 @@ const MergeSort = () => {
             </Tooltip>
           </TooltipProvider>
         ))}
+      </div>
+
+      <div className="flex justify-between mt-10 w-full">
+        <div className="w-[58%]">
+          <h1 className="text-xl mb-4">Pseudocode</h1>
+          <div className="daisy-mockup-code">
+            <pre>
+              {" "}
+              <code>
+                <span>function</span> <span>mergeSort</span>(
+                <span>arr</span>, <span>left</span>, <span>right</span>) {"{"}
+                {"\n"} <span>if</span> (left {"<"} right) {"{"} {"\n"}
+                {"\t"} <span>let</span> mid = <span>Math</span>.
+                <span>floor</span>((left + right) / 2);{"\n"}
+                {"\t"} mergeSort(arr, left, mid);{"\n"}
+                {"\t"} mergeSort(arr, mid + 1, right);{"\n"}
+                {"\t"} merge(arr, left, mid, right);{"\n"} {"}"} {"\n"}
+                {"}"} {"\n"}
+                {"\n"} <span>function</span> <span>merge</span>(
+                <span>arr</span>, <span>left</span>, <span>mid</span>,{" "}
+                <span>right</span>) {"{"} {"\n"}
+                {"\t"} <span>let</span> leftLen = mid - left + 1;{"\n"}
+                {"\t"} <span>let</span> rightLen = right - mid;{"\n"}
+                {"\n"} {"\t"} <span>let</span> array1 = [], array2 = [];{"\n"}
+                {"\n"} {"\t"} <span>for</span> (<span>let</span> i = 0; i{" "}
+                {"<"} leftLen; i++) array1[i] = arr[left + i];{"\n"}
+                {"\t"} <span>for</span> (<span>let</span> i = 0; i{" "}
+                {"<"} rightLen; i++) array2[i] = arr[mid + 1 + i];{"\n"}
+                {"\n"} {"\t"} <span>let</span> i = 0, j = 0, k = left;{"\n"}
+                {"\n"} {"\t"} <span>while</span> (i {"<"} leftLen && j{" "}
+                {"<"} rightLen) {"{"} {"\n"}
+                {"\t\t"} <span>if</span> (array1[i] {"<="} array2[j]) {"{"}{" "}
+                {"\n"}
+                {"\t\t\t"} arr[k++] = array1[i++]; {"\n"} {"\t\t"} {"}"} {"\n"}
+                {"\t\t"} <span>else</span> {"{"} {"\n"}
+                {"\t\t\t"} arr[k++] = array2[j++]; {"\n"} {"\t\t"} {"}"} {"\n"}
+                {"\t"} {"}"} {"\n"} {"\n"}
+                {"\t"} <span>while</span> (i {"<"} leftLen) arr[k++] = array1[i++];{"\n"}
+                {"\t"} <span>while</span> (j {"<"} rightLen) arr[k++] = array2[j++];{"\n"}
+                {"}"}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div className="w-[40%]">
+          <Card>
+            <CardHeader>
+              <CardTitle>Complexity Variables</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <b>Time Complexity</b>
+              </p>
+              <p>
+                Best Case: O(n log n)
+              </p>
+              <p>
+                Worst Case: O(n log n)
+              </p>
+              <p>
+                Average: O(n log n)
+              </p>
+              <Separator className="my-5" />
+              <p>
+                <b>Space Complexity</b>
+              </p>
+              <p>O(n)</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="my-5 w-full border p-5 rounded-lg">
+        <h1 className="text-lg">Algorithm</h1>
+        <ol>
+          <li>
+            <strong>Input:</strong>
+            <ul>
+              <li>
+                A list of elements <code>arr</code> (with <code>n</code>{" "}
+                elements).
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Initialization:</strong>
+            <ul>
+              <li>
+                If the list has only one element, return it.
+              </li>
+              <li>
+                Else, divide the list into two halves.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Merge Sort:</strong>
+            <ul>
+              <li>Recursively sort each half.</li>
+              <li>Merge the two sorted halves into one sorted list.</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Merge:</strong>
+            <ul>
+              <li>Compare the elements of both halves one by one.</li>
+              <li>Insert the smaller element into the result list.</li>
+              <li>Repeat the process until all elements from both halves are compared and inserted.</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <strong>Output:</strong>
+            <ul>
+              <li>The sorted list.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div className="my-5">
+        <h1 className="text-lg">Read More: </h1>
+        <a
+          href="https://www.geeksforgeeks.org/merge-sort/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-500"
+        >
+          GeeksForGeeks
+        </a>
       </div>
     </div>
   );
